@@ -1,7 +1,4 @@
 # email,url
-# コメント行は # で始める
-# 1 行 1 レコード、カンマ区切り、前後スペースは自由（Workers 側で trim）
-
 user1@example.com,https://note.com/xxx1
 friend2@example.com,https://note.com/xxx2
 colleague3@example.com,https://note.com/xxx3
