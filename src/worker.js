@@ -1,8 +1,10 @@
 // src/worker.js
 
-const ALLOWLIST_URL = 'https://fujigy.github.io/allowlist.txt'; // 1行1メールアドレス
-const NOTE_URL = 'https://note.com/your_note_slug';             // 限定公開URL
-const FORM_URL = 'https://fujigy.github.io/fujigyentry2.html';  // 元フォームのURL
+// allowlist.txt（CSV）の URL
+const ALLOWLIST_URL = 'https://fujigy.github.io/allowlist.txt';
+
+// 不許可時に戻すフォーム
+const FORM_URL = 'https://fujigy.github.io/fujigyentry2.html';
 
 export default {
   async fetch(request, env, ctx) {
@@ -11,7 +13,7 @@ export default {
       return Response.redirect(FORM_URL, 302);
     }
 
-    // Content-Type チェック（フォーム送信のみ許可）
+    // Content-Type チェック
     const contentType = request.headers.get('Content-Type') || '';
     if (!contentType.includes('application/x-www-form-urlencoded')) {
       return Response.redirect(FORM_URL, 302);
@@ -25,10 +27,10 @@ export default {
       return Response.redirect(FORM_URL, 302);
     }
 
-    // email 正規化（前後空白除去・小文字化）
+    // email 正規化
     const email = emailRaw.trim().toLowerCase();
 
-    // 簡易バリデーション（必要なら強めてもOK）
+    // email バリデーション
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email)) {
       return Response.redirect(FORM_URL, 302);
@@ -38,29 +40,35 @@ export default {
     let allowlistText;
     try {
       const res = await fetch(ALLOWLIST_URL, { method: 'GET' });
-      if (!res.ok) {
-        // 安全側に倒す
-        return Response.redirect(FORM_URL, 302);
-      }
+      if (!res.ok) return Response.redirect(FORM_URL, 302);
       allowlistText = await res.text();
     } catch (e) {
-      // ネットワークエラーなど → 安全側
       return Response.redirect(FORM_URL, 302);
     }
 
-    // 許可リストを配列化（空行・空白を除去）
-    const allowedEmails = allowlistText
+    // CSV をパース（email,url）
+    const lines = allowlistText
       .split(/\r\n|\r|\n/)
-      .map(line => line.trim().toLowerCase())
-      .filter(line => line.length > 0);
+      .map(line => line.trim())
+      .filter(line => line.length > 0 && !line.startsWith('#'));
 
-    const isAllowed = allowedEmails.includes(email);
+    const map = new Map();
 
-    if (isAllowed) {
-      // 許可 → note の限定公開URLへ
-      return Response.redirect(NOTE_URL, 302);
+    for (const line of lines) {
+      const [emailCol, urlCol] = line.split(',');
+      if (emailCol && urlCol) {
+        map.set(emailCol.trim().toLowerCase(), urlCol.trim());
+      }
+    }
+
+    // 行き先 URL を取得
+    const redirectUrl = map.get(email);
+
+    if (redirectUrl) {
+      // 許可 → note の限定公開 URL へ
+      return Response.redirect(redirectUrl, 302);
     } else {
-      // 不許可 → フォームに戻す（中身はブラウザ側でクリアされる想定）
+      // 不許可 → フォームに戻す
       return Response.redirect(FORM_URL, 302);
     }
   }
