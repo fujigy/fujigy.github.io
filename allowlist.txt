@@ -1,4 +1,10 @@
-# email,url
-user1@example.com,https://note.com/xxx1
-friend2@example.com,https://note.com/xxx2
-colleague3@example.com,https://note.com/xxx3
+# Fromat : eMail, URL
+
+# --- 履歴書 ---
+takedadenno@gmail.com,https://proff.io/p/Wy683qgOghF_FC955VGuCg
+
+# --- あゆみ：修行編 ---
+takedadenno@gmail.com,https://canva.link/qukkz1f3uuyusp7
+
+# --- あゆみ：実務編 ---
+takedadenno@gmail.com,https://canva.link/iagn5trhicisct7
