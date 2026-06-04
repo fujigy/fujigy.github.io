@@ -1,10 +1,17 @@
-# Fromat : eMail, URL
+# Format : email,target,url
+# target = "resume"   : 履歴書
+#        = "work"     : 職務経歴書
+#        = "beginner" : あゆみ：修行編 
+#        = "expert"   : あゆみ：実務編 
 
 # --- 履歴書 ---
-takedadenno@gmail.com,https://proff.io/p/Wy683qgOghF_FC955VGuCg
+takedadenno@gmail.com,resume,https://proff.io/p/Wy683qgOghF_FC955VGuCg
+
+# --- 職務経歴書 ---
+#takedadenno@gmail.com,work,(url)
 
 # --- あゆみ：修行編 ---
-takedadenno@gmail.com,https://canva.link/qukkz1f3uuyusp7
+takedadenno@gmail.com,beginner,https://canva.link/qukkz1f3uuyusp7
 
 # --- あゆみ：実務編 ---
-takedadenno@gmail.com,https://canva.link/iagn5trhicisct7
+takedadenno@gmail.com,expert,https://canva.link/iagn5trhicisct7
