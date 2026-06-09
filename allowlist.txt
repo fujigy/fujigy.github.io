@@ -1,17 +1,25 @@
 # Format : email,target,url
-# target = "resume"   : 履歴書
-#        = "work"     : 職務経歴書
-#        = "beginner" : あゆみ：修行編 
-#        = "expert"   : あゆみ：実務編 
+//# target = "resume"   : 履歴書
+//#        = "work"     : 職務経歴書
+//#        = "beginner" : あゆみ：修行編 
+//#        = "expert"   : あゆみ：実務編 
+# target = "career"   : 履歴書, 職務経歴書
+#        = "ayumi"    : あゆみ：修行編, 実務編 
 
-# --- 履歴書 ---
-takedadenno@gmail.com,resume,https://proff.io/p/Wy683qgOghF_FC955VGuCg
+//# --- 履歴書 ---
+//takedadenno@gmail.com,resume,https://proff.io/p/Wy683qgOghF_FC955VGuCg
+//
+//# --- 職務経歴書 ---
+//#takedadenno@gmail.com,work,(url)
 
-# --- 職務経歴書 ---
-#takedadenno@gmail.com,work,(url)
+# --- 履歴書, 職務経歴書 (https://note.com/fujizy/n/n9939c77a35ae) ---
+takedadenno@gmail.com,career,https://note.com/fujizy/n/n9939c77a35ae
 
-# --- あゆみ：修行編 ---
-takedadenno@gmail.com,beginner,https://canva.link/qukkz1f3uuyusp7
+//# --- あゆみ：修行編 ---
+//takedadenno@gmail.com,beginner,https://canva.link/qukkz1f3uuyusp7
+//
+//# --- あゆみ：実務編 ---
+//takedadenno@gmail.com,expert,https://canva.link/iagn5trhicisct7
 
-# --- あゆみ：実務編 ---
-takedadenno@gmail.com,expert,https://canva.link/iagn5trhicisct7
+# --- あゆみ：修行編, 実務編 (https://note.com/fujizy/n/n217bc3cb262d) ---
+takedadenno@gmail.com,ayumi,https://note.com/fujizy/n/n217bc3cb262d
