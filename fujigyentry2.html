@@ -48,7 +48,7 @@
 <body>
   <div class="container">
     <h1>これまでのあゆみ｜アクセス確認</h1>
-    <p>閲覧ご希望の方は、メールアドレスを入力の上、申請するボタンをクリックしてください。</p>
+    <p>閲覧をご希望の方は、メールアドレスをご入力の上、申請するボタンをクリックしてください。</p>
 
     <form id="entryForm">
       <input type="hidden" name="target" value="ayumi">
@@ -56,6 +56,39 @@
       <input type="email" id="email-ayumi" name="email" required>
       <button type="submit">申請する</button>
     </form>
+
+    <div id="error" style="color: red; margin-top: 1rem;"></div>
   </div>
+
+  <script>
+    document.getElementById("entryForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email-ayumi").value.trim();
+      const errorDiv = document.getElementById("error");
+
+      try {
+        const res = await fetch("https://admin-send.takedadenno-fujizy.workers.dev/send", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email })
+        });
+
+        const data = await res.json();
+
+        if (data.error) {
+          errorDiv.textContent = "メールアドレスが確認できませんでした。";
+          return;
+        }
+
+        if (data.redirect) {
+          window.location.href = data.redirect;
+        }
+
+      } catch (err) {
+        errorDiv.textContent = "通信エラーが発生しました。";
+      }
+    });
+  </script>
 </body>
 </html>
