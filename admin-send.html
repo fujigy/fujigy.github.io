@@ -46,7 +46,7 @@
   <div class="container">
     <h1>管理者専用｜履歴書URL送信</h1>
 
-    <form action="https://admin-send.takedadenno-fujizy.workers.dev/send" method="POST">
+    <form onsubmit="sendMail(); return false;">
       <label for="email">送信先メールアドレス</label>
       <input type="email" id="email" name="email" required>
 
