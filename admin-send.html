@@ -53,5 +53,26 @@
       <button type="submit">URL を送信する</button>
     </form>
   </div>
+  <script>
+    async function sendMail() {
+    const email = document.getElementById("email").value;
+
+    const res = await fetch("https://send-profurl.takedadenno-fujizy.workers.dev", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email })
+    });
+
+    const result = await res.json();
+    console.log(result);
+
+    if (result.ok) {
+      alert("送信しました。");
+    } else {
+      alert("送信に失敗しました。");
+    }
+  }
+</script>
+
 </body>
 </html>
