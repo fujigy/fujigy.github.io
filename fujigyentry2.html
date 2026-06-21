@@ -28,12 +28,19 @@
                 <input type="email" id="email-ayumi" name="email" required />
 
                 <!-- ▼ hCaptcha -->
-                <div class="h-captcha" data-sitekey="befa7a92-a448-426a-82ce-129a07b0fcc6"></div>
+                <div
+                    class="h-captcha"
+                    data-sitekey="befa7a92-a448-426a-82ce-129a07b0fcc6"
+                ></div>
 
                 <button id="submitBtn" type="submit" disabled>申請する</button>
 
                 <!-- hCaptcha スクリプト -->
-                <script src="https://hcaptcha.com/1/api.js" async defer></script>
+                <script
+                    src="https://hcaptcha.com/1/api.js"
+                    async
+                    defer
+                ></script>
             </form>
 
             <div id="error" style="color: red; margin-top: 1rem"></div>
@@ -53,7 +60,7 @@
             // ▼ hCaptcha のトークン取得
             function getCaptchaToken() {
                 return document.querySelector(
-                    'textarea[name="h-captcha-response"]'
+                    'textarea[name="h-captcha-response"]',
                 )?.value;
             }
 
@@ -80,7 +87,8 @@
                 const hcaptchaResponse = getCaptchaToken();
 
                 if (!isValidEmail(email)) {
-                    errorDiv.textContent = "メールアドレスの形式が正しくありません。";
+                    errorDiv.textContent =
+                        "メールアドレスの形式が正しくありません。";
                     return;
                 }
 
@@ -99,7 +107,7 @@
                                 email,
                                 hcaptcha: hcaptchaResponse,
                             }),
-                        }
+                        },
                     );
 
                     const data = await res.json();
