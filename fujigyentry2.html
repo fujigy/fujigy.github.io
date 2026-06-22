@@ -55,9 +55,10 @@
             }
 
             function getCaptchaToken() {
-                return document.querySelector(
+                const el = document.querySelector(
                     'textarea[name="h-captcha-response"]',
-                )?.value;
+                );
+                return el ? el.value : "";
             }
 
             function updateButtonState() {
