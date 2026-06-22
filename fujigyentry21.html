@@ -1,1 +1,121 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>これまでのあゆみ｜アクセス確認</title>
+    </head>
+    <body>
+        <p>
+            <a
+                href="https://fujigy.github.io/"
+                style="color: #0066cc; text-decoration: none"
+            >
+                ← 先頭へ戻る
+            </a>
+        </p>
 
+        <div class="container">
+            <h1>これまでのあゆみ｜アクセス確認</h1>
+            <p>
+                閲覧をご希望の方は、メールアドレスをご入力の上、申請するボタンをクリックしてください。
+            </p>
+
+            <form id="entryForm" action="#" method="POST">
+                <input type="hidden" name="target" value="ayumi" />
+
+                <label for="email-ayumi">メールアドレス</label>
+                <input type="email" id="email-ayumi" name="email" required />
+
+                <!-- ▼ hCaptcha -->
+                <div
+                    class="h-captcha"
+                    data-sitekey="9d270bc4-3bc4-4836-a6f6-b9b61295c71f"
+                ></div>
+
+                <button id="submitBtn" type="submit" disabled>申請する</button>
+            </form>
+
+            <div id="error" style="color: red; margin-top: 1rem"></div>
+        </div>
+
+        <!-- hCaptcha -->
+        <script src="https://hcaptcha.com/1/api.js" async defer></script>
+
+        <!-- あなたの JS -->
+        <script>
+            const form = document.getElementById("entryForm");
+            const submitBtn = document.getElementById("submitBtn");
+            const emailInput = document.getElementById("email-ayumi");
+            const errorDiv = document.getElementById("error");
+
+            function isValidEmail(email) {
+                return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
+            }
+
+            function getCaptchaToken() {
+                const el = document.querySelector(
+                    'textarea[name="h-captcha-response"]',
+                );
+                return el ? el.value : "";
+            }
+
+            function updateButtonState() {
+                const email = emailInput.value.trim();
+                const captcha = getCaptchaToken();
+                submitBtn.disabled = !(isValidEmail(email) && captcha);
+            }
+
+            emailInput.addEventListener("input", updateButtonState);
+
+            const observer = new MutationObserver(updateButtonState);
+            observer.observe(document.body, { childList: true, subtree: true });
+
+            form.addEventListener("submit", async function (e) {
+                e.preventDefault();
+
+                const email = emailInput.value.trim();
+                const hcaptchaResponse = getCaptchaToken();
+
+                if (!isValidEmail(email)) {
+                    errorDiv.textContent =
+                        "メールアドレスの形式が正しくありません。";
+                    return;
+                }
+
+                if (!hcaptchaResponse) {
+                    errorDiv.textContent = "認証が確認できませんでした。";
+                    return;
+                }
+
+                try {
+                    const res = await fetch(
+                        "https://admin-send.takedadenno-fujizy.workers.dev/send",
+                        {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
+                                email,
+                                hcaptcha: hcaptchaResponse,
+                            }),
+                        },
+                    );
+
+                    const data = await res.json();
+
+                    if (data.error) {
+                        errorDiv.textContent = "認証に失敗しました。";
+                        return;
+                    }
+
+                    if (data.redirect) {
+                        window.location.href = data.redirect;
+                    }
+                } catch (err) {
+                    errorDiv.textContent = "通信エラーが発生しました。";
+                }
+            });
+        </script>
+    </body>
+</html>
