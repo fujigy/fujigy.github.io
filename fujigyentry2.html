@@ -15,13 +15,14 @@
                 ← 先頭へ戻る
             </a>
         </p>
+
         <div class="container">
             <h1>これまでのあゆみ｜アクセス確認</h1>
             <p>
                 閲覧をご希望の方は、メールアドレスをご入力の上、申請するボタンをクリックしてください。
             </p>
 
-            <form id="entryForm">
+            <form id="entryForm" action="#" method="POST">
                 <input type="hidden" name="target" value="ayumi" />
 
                 <label for="email-ayumi">メールアドレス</label>
@@ -34,52 +35,42 @@
                 ></div>
 
                 <button id="submitBtn" type="submit" disabled>申請する</button>
-
-                <!-- hCaptcha スクリプト -->
-                <script
-                    src="https://hcaptcha.com/1/api.js"
-                    async
-                    defer
-                ></script>
             </form>
 
             <div id="error" style="color: red; margin-top: 1rem"></div>
         </div>
 
+        <!-- hCaptcha -->
+        <script src="https://hcaptcha.com/1/api.js" async defer></script>
+
+        <!-- あなたの JS -->
         <script>
             const form = document.getElementById("entryForm");
             const submitBtn = document.getElementById("submitBtn");
             const emailInput = document.getElementById("email-ayumi");
             const errorDiv = document.getElementById("error");
 
-            // ▼ メール形式チェック用の正規表現
             function isValidEmail(email) {
                 return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
             }
 
-            // ▼ hCaptcha のトークン取得
             function getCaptchaToken() {
                 return document.querySelector(
                     'textarea[name="h-captcha-response"]',
                 )?.value;
             }
 
-            // ▼ ボタン有効化判定
             function updateButtonState() {
                 const email = emailInput.value.trim();
                 const captcha = getCaptchaToken();
-
                 submitBtn.disabled = !(isValidEmail(email) && captcha);
             }
 
-            // ▼ 入力イベント監視
             emailInput.addEventListener("input", updateButtonState);
 
-            // ▼ hCaptcha の変化監視
             const observer = new MutationObserver(updateButtonState);
             observer.observe(document.body, { childList: true, subtree: true });
 
-            // ▼ フォーム送信処理
             form.addEventListener("submit", async function (e) {
                 e.preventDefault();
 
