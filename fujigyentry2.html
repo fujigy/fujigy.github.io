@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="style.css" />
         <title>これまでのあゆみ｜アクセス確認</title>
+        <script src="https://cdn.jsdelivr.net/npm/altcha/dist/altcha.min.js" defer></script>
     </head>
     <body>
         <p>
@@ -28,11 +29,8 @@
                 <label for="email-ayumi">メールアドレス</label>
                 <input type="email" id="email-ayumi" name="email" required />
 
-                <!-- ▼ hCaptcha -->
-                <div
-                    class="h-captcha"
-                    data-sitekey="9d270bc4-3bc4-4836-a6f6-b9b61295c71f"
-                ></div>
+                <!-- ▼ ALTCHA -->
+                <altcha-widget id="altcha"></altcha-widget>
 
                 <button id="submitBtn" type="submit" disabled>申請する</button>
             </form>
@@ -40,43 +38,31 @@
             <div id="error" style="color: red; margin-top: 1rem"></div>
         </div>
 
-        <!-- hCaptcha -->
-        <script src="https://hcaptcha.com/1/api.js" async defer></script>
-
-        <!-- あなたの JS -->
         <script>
             const form = document.getElementById("entryForm");
             const submitBtn = document.getElementById("submitBtn");
             const emailInput = document.getElementById("email-ayumi");
             const errorDiv = document.getElementById("error");
+            const altcha = document.getElementById("altcha");
 
             function isValidEmail(email) {
                 return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
             }
 
-            function getCaptchaToken() {
-                const el = document.querySelector(
-                    'textarea[name="h-captcha-response"]',
-                );
-                return el ? el.value : "";
-            }
-
             function updateButtonState() {
                 const email = emailInput.value.trim();
-                const captcha = getCaptchaToken();
-                submitBtn.disabled = !(isValidEmail(email) && captcha);
+                const token = altcha.getAttribute("data-token");
+                submitBtn.disabled = !(isValidEmail(email) && token);
             }
 
             emailInput.addEventListener("input", updateButtonState);
-
-            const observer = new MutationObserver(updateButtonState);
-            observer.observe(document.body, { childList: true, subtree: true });
+            altcha.addEventListener("altcha-success", updateButtonState);
 
             form.addEventListener("submit", async function (e) {
                 e.preventDefault();
 
                 const email = emailInput.value.trim();
-                const hcaptchaResponse = getCaptchaToken();
+                const token = altcha.getAttribute("data-token");
 
                 if (!isValidEmail(email)) {
                     errorDiv.textContent =
@@ -84,7 +70,7 @@
                     return;
                 }
 
-                if (!hcaptchaResponse) {
+                if (!token) {
                     errorDiv.textContent = "認証が確認できませんでした。";
                     return;
                 }
@@ -97,7 +83,7 @@
                             headers: { "Content-Type": "application/json" },
                             body: JSON.stringify({
                                 email,
-                                hcaptcha: hcaptchaResponse,
+                                altcha: token,
                             }),
                         },
                     );
