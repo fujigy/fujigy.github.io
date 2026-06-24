@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Auth Test</title>
+</head>
+
+<body>
+  <h1>簡易認証テスト</h1>
+
+  <p>次の質問に答えてください：</p>
+  <p><strong>3 + 5 = ?</strong></p>
+
+  <input id="answer" type="text" placeholder="答えを入力" />
+  <button id="submit">送信</button>
+
+  <p id="result" style="color:red;"></p>
+
+  <script>
+    // 正解「8」の SHA-256 ハッシュ（"8" → SHA-256）
+    const correctHash = "c9f0f895fb98ab9159f51fd0297e236d";
+
+    // 簡易 MD5（軽量のため SHA-256 ではなく MD5 を使用）
+    function md5(str) {
+      return CryptoJS.MD5(str).toString();
+    }
+
+    document.getElementById("submit").addEventListener("click", () => {
+      const input = document.getElementById("answer").value.trim();
+      const hash = md5(input);
+
+      if (hash === correctHash) {
+        // 認証成功 → 閲覧ページへ
+        window.location.href = "your_resume_page.html";
+      } else {
+        document.getElementById("result").textContent = "不正解です。";
+      }
+    });
+  </script>
+
+  <!-- MD5 ライブラリ（軽量） -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</body>
+</html>
