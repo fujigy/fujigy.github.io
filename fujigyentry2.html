@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="style.css" />
-        <title>履歴書・職務経歴書｜閲覧申請</title>
+        <title>これまでのあゆみ｜アクセス確認</title>
     </head>
 
     <body>
@@ -18,24 +18,20 @@
         </p>
 
         <div class="container">
-            <h1>履歴書・職務経歴書 閲覧申請</h1>
+            <h1>これまでのあゆみ｜アクセス確認</h1>
             <p>
-                こちらから、履歴書・職務経歴書の閲覧ページへアクセスできます。
+                閲覧をご希望の方は、メールアドレスをご入力の上、申請するボタンをクリックしてください。
             </p>
-            <p>
-                メールアドレスを入力し、下の認証問題に正解すると
-                ［申請する］ボタンが有効になります。
-            </p>
-            <p>
-                ご覧になる書類のリンクをクリックすると、ブラウザ上で閲覧できます。
-            </p>
-            <p>なお各ページには［PDFダウンロード］ボタンを準備しております。</p>
-            <p>必要な方はご利用ください。</p>
 
             <!-- ▼▼▼ 認証ブロック（追加） ▼▼▼ -->
             <div id="auth-block" style="margin-bottom: 1.5rem">
                 <p>次の計算結果を半角数字で入力してください：</p>
-                <p><strong>１２３４５６ ✕ ０＝ ？</strong></p>
+                <p>
+                    <strong
+                        >（ １ ＋ ２ ） ÷（ ３ －４ ） ✕ （ ５ ＋６ ） ✕ 0 ＝
+                        ？</strong
+                    >
+                </p>
 
                 <input id="auth-answer" type="text" placeholder="答えを入力" />
                 <button id="auth-check" type="button">確認</button>
@@ -49,29 +45,19 @@
                 <input
                     type="hidden"
                     name="access_key"
-                    value="9d270bc4-3bc4-4836-a6f6-b9b61295c71f"
+                    value="a24f6264-e3f7-4ee8-b096-2d969d5d4d4a"
                 />
 
                 <!-- autoReply（Web3Forms 側で設定） -->
                 <input
                     type="hidden"
                     name="redirect"
-                    value="https://fujigy.github.io/prof-hub.html"
+                    value="https://fujigy.github.io/ayumi-hub.html"
                 />
                 <input
                     type="hidden"
                     name="error_redirect"
-                    value="https://fujigy.github.io/prof-error.html"
-                />
-                <input
-                    type="hidden"
-                    name="subject"
-                    value="【閲覧申請】履歴書・職務経歴書"
-                />
-                <input
-                    type="hidden"
-                    name="from_name"
-                    value="fujigy.github.io"
+                    value="https://fujigy.github.io/ayumi-error.html"
                 />
 
                 <label for="email">メールアドレス</label>
@@ -83,13 +69,6 @@
                 <!-- ▼▼▼ 送信ボタン（disabled に変更） ▼▼▼ -->
                 <button id="submit-btn" type="submit" disabled>申請する</button>
                 <!-- ▲▲▲ 送信ボタン（disabled に変更） ▲▲▲ -->
-
-                <!-- Web3Forms script（残す） -->
-                <script
-                    src="https://web3forms.com/client/script.js"
-                    async
-                    defer
-                ></script>
             </form>
         </div>
 
