@@ -5,7 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="style.css" />
         <title>履歴書・職務経歴書｜閲覧申請</title>
+
+        <!-- ALTCHA -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/altcha@latest/dist/altcha.umd.js"
+            defer
+        ></script>
     </head>
+
     <body>
         <p>
             <a
@@ -15,6 +22,7 @@
                 ← 先頭へ戻る
             </a>
         </p>
+
         <div class="container">
             <h1>履歴書・職務経歴書 閲覧申請</h1>
             <p>
@@ -68,11 +76,15 @@
                 <!-- Honeypot -->
                 <input type="checkbox" name="botcheck" style="display: none" />
 
-                <!-- hCaptcha -->
-                <div class="h-captcha" data-captcha="true"></div>
+                <!-- ALTCHA -->
+                <altcha-widget
+                    challengeurl="https://altcha.org/api/v1/challenge"
+                    style="margin-bottom: 1rem"
+                ></altcha-widget>
 
                 <button type="submit">申請する</button>
 
+                <!-- Web3Forms script（残す） -->
                 <script
                     src="https://web3forms.com/client/script.js"
                     async
