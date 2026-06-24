@@ -23,14 +23,14 @@
                 閲覧をご希望の方は、以下の項目を入力し［次へ進む］をクリックしてください。
             </p>
 
-            <!-- ▼ 計算問題入力欄 ▼ -->
+            <!-- ▼ 計算問題入力欄 -->
             <label for="auth-answer"
                 >次の計算結果を半角数字で入力してください：</label
             >
             <p><strong>123456 × 0 = ？</strong></p>
             <input id="auth-answer" type="text" placeholder="半角数字" />
 
-            <!-- ▼ メールアドレス入力欄 ▼ -->
+            <!-- ▼ メールアドレス入力欄 -->
             <label for="email" style="margin-top: 1rem">メールアドレス</label>
             <input
                 type="email"
@@ -39,13 +39,13 @@
                 placeholder="your@example.com"
             />
 
-            <!-- ▼ エラーメッセージ（統一） ▼ -->
+            <!-- ▼ エラーメッセージ -->
             <p id="error-message" style="color: red; margin-top: 0.5rem"></p>
 
-            <!-- ▼ ボタン（1 個だけ） ▼ -->
+            <!-- ▼ 次へ進むボタン -->
             <button id="submit-btn" type="button">次へ進む</button>
 
-            <!-- ▼ Web3Forms hidden fields ▼ -->
+            <!-- ▼ Web3Forms hidden fields -->
             <form
                 id="hidden-form"
                 action="https://api.web3forms.com/submit"
@@ -72,10 +72,13 @@
             </form>
         </div>
 
-        <!-- ▼ ロジック ▼ -->
+        <!-- ▼ ロジック -->
         <script>
             const correctHash = "cfcd208495d565ef66e7dff9f98764da"; // 正解「0」の MD5
-            const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[A-Za-z]{2,}$/;
+
+            // ★ あなたが提示した安定版の正規表現に更新
+            const emailRegex =
+                /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 
             document
                 .getElementById("submit-btn")
@@ -101,7 +104,7 @@
                             "2px solid red";
                     }
 
-                    // メールチェック
+                    // メールチェック（★ 正規表現が正常に動作）
                     if (!emailRegex.test(email)) {
                         hasError = true;
                         document.getElementById("email").style.border =
