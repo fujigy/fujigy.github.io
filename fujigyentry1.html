@@ -5,12 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="style.css" />
         <title>履歴書・職務経歴書｜閲覧申請</title>
-
-        <!-- ALTCHA -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/altcha@latest/dist/altcha.umd.js"
-            defer
-        ></script>
     </head>
 
     <body>
@@ -29,16 +23,26 @@
                 こちらから、履歴書・職務経歴書の閲覧ページへアクセスできます。
             </p>
             <p>
-                メールアドレスを入力し、「私は人間です」にチェックをすると、
-                セキュリティチェックのための簡単なクイズを解いてください。
-                正解したら［申請する］をクリックします。
-                すると各書類の閲覧ページに移動します。
+                メールアドレスを入力し、下の認証問題に正解すると
+                ［申請する］ボタンが有効になります。
             </p>
             <p>
                 ご覧になる書類のリンクをクリックすると、ブラウザ上で閲覧できます。
             </p>
             <p>なお各ページには［PDFダウンロード］ボタンを準備しております。</p>
             <p>必要な方はご利用ください。</p>
+
+            <!-- ▼▼▼ 認証ブロック（追加） ▼▼▼ -->
+            <div id="auth-block" style="margin-bottom: 1.5rem;">
+                <p>次の計算結果を半角数字で入力してください：</p>
+                <p><strong>１２３４５６ ✕ ０＝ ？</strong></p>
+
+                <input id="auth-answer" type="text" placeholder="答えを入力" />
+                <button id="auth-check" type="button">確認</button>
+
+                <p id="auth-result" style="color:red; margin-top:0.5rem;"></p>
+            </div>
+            <!-- ▲▲▲ 認証ブロック（追加） ▲▲▲ -->
 
             <form action="https://api.web3forms.com/submit" method="POST">
                 <!-- Form Name : fujigy_prof -->
@@ -76,13 +80,9 @@
                 <!-- Honeypot -->
                 <input type="checkbox" name="botcheck" style="display: none" />
 
-                <!-- ALTCHA -->
-                <altcha-widget
-                    challengeurl="https://altcha.org/api/v1/challenge"
-                    style="margin-bottom: 1rem"
-                ></altcha-widget>
-
-                <button type="submit">申請する</button>
+                <!-- ▼▼▼ 送信ボタン（disabled に変更） ▼▼▼ -->
+                <button id="submit-btn" type="submit" disabled>申請する</button>
+                <!-- ▲▲▲ 送信ボタン（disabled に変更） ▲▲▲ -->
 
                 <!-- Web3Forms script（残す） -->
                 <script
@@ -92,5 +92,36 @@
                 ></script>
             </form>
         </div>
+
+        <!-- ▼▼▼ 認証ロジック（追加） ▼▼▼ -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+        <script>
+            // 正解「0」の MD5 ハッシュ
+            const correctHash = "cfcd208495d565ef66e7dff9f98764da";
+
+            document.getElementById("auth-check").addEventListener("click", () => {
+                const input = document.getElementById("auth-answer").value.trim();
+                const hash = CryptoJS.MD5(input).toString();
+
+                if (hash === correctHash) {
+                    document.getElementById("auth-result").style.color = "green";
+                    document.getElementById("auth-result").textContent =
+                        "認証成功しました。送信できます。";
+
+                    // 送信ボタンを有効化
+                    document.getElementById("submit-btn").disabled = false;
+
+                    // 認証ブロックを無効化（任意）
+                    document.getElementById("auth-answer").disabled = true;
+                    document.getElementById("auth-check").disabled = true;
+                } else {
+                    document.getElementById("auth-result").style.color = "red";
+                    document.getElementById("auth-result").textContent =
+                        "不正解です。";
+                }
+            });
+        </script>
+        <!-- ▲▲▲ 認証ロジック（追加） ▲▲▲ -->
     </body>
 </html>
