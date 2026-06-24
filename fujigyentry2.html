@@ -4,12 +4,9 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="style.css" />
-        <title>これまでのあゆみ｜アクセス確認</title>
-        <script
-            src="https://cdn.jsdelivr.net/npm/altcha@latest/dist/altcha.umd.js"
-            defer
-        ></script>
+        <title>履歴書・職務経歴書｜閲覧申請</title>
     </head>
+
     <body>
         <p>
             <a
@@ -21,90 +18,116 @@
         </p>
 
         <div class="container">
-            <h1>これまでのあゆみ｜アクセス確認</h1>
+            <h1>履歴書・職務経歴書 閲覧申請</h1>
             <p>
-                閲覧をご希望の方は、メールアドレスをご入力の上、申請するボタンをクリックしてください。
+                こちらから、履歴書・職務経歴書の閲覧ページへアクセスできます。
             </p>
+            <p>
+                メールアドレスを入力し、下の認証問題に正解すると
+                ［申請する］ボタンが有効になります。
+            </p>
+            <p>
+                ご覧になる書類のリンクをクリックすると、ブラウザ上で閲覧できます。
+            </p>
+            <p>なお各ページには［PDFダウンロード］ボタンを準備しております。</p>
+            <p>必要な方はご利用ください。</p>
 
-            <form id="entryForm" action="#" method="POST">
-                <input type="hidden" name="target" value="ayumi" />
+            <!-- ▼▼▼ 認証ブロック（追加） ▼▼▼ -->
+            <div id="auth-block" style="margin-bottom: 1.5rem">
+                <p>次の計算結果を半角数字で入力してください：</p>
+                <p><strong>１２３４５６ ✕ ０＝ ？</strong></p>
 
-                <label for="email-ayumi">メールアドレス</label>
-                <input type="email" id="email-ayumi" name="email" required />
+                <input id="auth-answer" type="text" placeholder="答えを入力" />
+                <button id="auth-check" type="button">確認</button>
 
-                <!-- ▼ ALTCHA -->
-                <altcha-widget id="altcha"></altcha-widget>
+                <p id="auth-result" style="color: red; margin-top: 0.5rem"></p>
+            </div>
+            <!-- ▲▲▲ 認証ブロック（追加） ▲▲▲ -->
 
-                <button id="submitBtn" type="submit" disabled>申請する</button>
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <!-- Form Name : fujigy_prof -->
+                <input
+                    type="hidden"
+                    name="access_key"
+                    value="9d270bc4-3bc4-4836-a6f6-b9b61295c71f"
+                />
+
+                <!-- autoReply（Web3Forms 側で設定） -->
+                <input
+                    type="hidden"
+                    name="redirect"
+                    value="https://fujigy.github.io/prof-hub.html"
+                />
+                <input
+                    type="hidden"
+                    name="error_redirect"
+                    value="https://fujigy.github.io/prof-error.html"
+                />
+                <input
+                    type="hidden"
+                    name="subject"
+                    value="【閲覧申請】履歴書・職務経歴書"
+                />
+                <input
+                    type="hidden"
+                    name="from_name"
+                    value="fujigy.github.io"
+                />
+
+                <label for="email">メールアドレス</label>
+                <input type="email" id="email" name="email" required />
+
+                <!-- Honeypot -->
+                <input type="checkbox" name="botcheck" style="display: none" />
+
+                <!-- ▼▼▼ 送信ボタン（disabled に変更） ▼▼▼ -->
+                <button id="submit-btn" type="submit" disabled>申請する</button>
+                <!-- ▲▲▲ 送信ボタン（disabled に変更） ▲▲▲ -->
+
+                <!-- Web3Forms script（残す） -->
+                <script
+                    src="https://web3forms.com/client/script.js"
+                    async
+                    defer
+                ></script>
             </form>
-
-            <div id="error" style="color: red; margin-top: 1rem"></div>
         </div>
 
+        <!-- ▼▼▼ 認証ロジック（追加） ▼▼▼ -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
         <script>
-            const form = document.getElementById("entryForm");
-            const submitBtn = document.getElementById("submitBtn");
-            const emailInput = document.getElementById("email-ayumi");
-            const errorDiv = document.getElementById("error");
-            const altcha = document.getElementById("altcha");
+            // 正解「0」の MD5 ハッシュ
+            const correctHash = "cfcd208495d565ef66e7dff9f98764da";
 
-            function isValidEmail(email) {
-                return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
-            }
+            document
+                .getElementById("auth-check")
+                .addEventListener("click", () => {
+                    const input = document
+                        .getElementById("auth-answer")
+                        .value.trim();
+                    const hash = CryptoJS.MD5(input).toString();
 
-            function updateButtonState() {
-                const email = emailInput.value.trim();
-                const token = altcha.getAttribute("data-token");
-                submitBtn.disabled = !(isValidEmail(email) && token);
-            }
+                    if (hash === correctHash) {
+                        document.getElementById("auth-result").style.color =
+                            "green";
+                        document.getElementById("auth-result").textContent =
+                            "認証成功しました。送信できます。";
 
-            emailInput.addEventListener("input", updateButtonState);
-            altcha.addEventListener("altcha-success", updateButtonState);
+                        // 送信ボタンを有効化
+                        document.getElementById("submit-btn").disabled = false;
 
-            form.addEventListener("submit", async function (e) {
-                e.preventDefault();
-
-                const email = emailInput.value.trim();
-                const token = altcha.getAttribute("data-token");
-
-                if (!isValidEmail(email)) {
-                    errorDiv.textContent =
-                        "メールアドレスの形式が正しくありません。";
-                    return;
-                }
-
-                if (!token) {
-                    errorDiv.textContent = "認証が確認できませんでした。";
-                    return;
-                }
-
-                try {
-                    const res = await fetch(
-                        "https://admin-send.takedadenno-fujizy.workers.dev/send",
-                        {
-                            method: "POST",
-                            headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify({
-                                email,
-                                altcha: token,
-                            }),
-                        },
-                    );
-
-                    const data = await res.json();
-
-                    if (data.error) {
-                        errorDiv.textContent = "認証に失敗しました。";
-                        return;
+                        // 認証ブロックを無効化（任意）
+                        document.getElementById("auth-answer").disabled = true;
+                        document.getElementById("auth-check").disabled = true;
+                    } else {
+                        document.getElementById("auth-result").style.color =
+                            "red";
+                        document.getElementById("auth-result").textContent =
+                            "不正解です。";
                     }
-
-                    if (data.redirect) {
-                        window.location.href = data.redirect;
-                    }
-                } catch (err) {
-                    errorDiv.textContent = "通信エラーが発生しました。";
-                }
-            });
+                });
         </script>
+        <!-- ▲▲▲ 認証ロジック（追加） ▲▲▲ -->
     </body>
 </html>
