@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="style.css" />
-        <title>履歴書・職務経歴書｜閲覧申請</title>
+        <title>履歴書・職務経歴書｜アクセス確認</title>
     </head>
 
     <body>
@@ -18,110 +18,117 @@
         </p>
 
         <div class="container">
-            <h1>履歴書・職務経歴書 閲覧申請</h1>
+            <h1>履歴書・職務経歴書｜アクセス確認</h1>
             <p>
-                こちらから、履歴書・職務経歴書の閲覧ページへアクセスできます。
+                閲覧をご希望の方は、以下の項目を入力し［次へ進む］をクリックしてください。
             </p>
-            <p>
-                メールアドレスを入力し、下の認証問題に正解すると
-                ［申請する］ボタンが有効になります。
-            </p>
-            <p>
-                ご覧になる書類のリンクをクリックすると、ブラウザ上で閲覧できます。
-            </p>
-            <p>なお各ページには［PDFダウンロード］ボタンを準備しております。</p>
-            <p>必要な方はご利用ください。</p>
 
-            <!-- ▼▼▼ 認証ブロック（追加） ▼▼▼ -->
-            <div id="auth-block" style="margin-bottom: 1.5rem;">
-                <p>次の計算結果を半角数字で入力してください：</p>
-                <p><strong>１２３４５６ ✕ ０＝ ？</strong></p>
+            <!-- ▼ 計算問題入力欄 ▼ -->
+            <label for="auth-answer"
+                >次の計算結果を半角数字で入力してください：</label
+            >
+            <p><strong>123456 × 0 = ？</strong></p>
+            <input id="auth-answer" type="text" placeholder="半角数字" />
 
-                <input id="auth-answer" type="text" placeholder="答えを入力" />
-                <button id="auth-check" type="button">確認</button>
+            <!-- ▼ メールアドレス入力欄 ▼ -->
+            <label for="email" style="margin-top: 1rem">メールアドレス</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your@example.com"
+            />
 
-                <p id="auth-result" style="color:red; margin-top:0.5rem;"></p>
-            </div>
-            <!-- ▲▲▲ 認証ブロック（追加） ▲▲▲ -->
+            <!-- ▼ エラーメッセージ（統一） ▼ -->
+            <p id="error-message" style="color: red; margin-top: 0.5rem"></p>
 
-            <form action="https://api.web3forms.com/submit" method="POST">
-                <!-- Form Name : fujigy_prof -->
+            <!-- ▼ ボタン（1 個だけ） ▼ -->
+            <button id="submit-btn" type="button">次へ進む</button>
+
+            <!-- ▼ Web3Forms hidden fields ▼ -->
+            <form
+                id="hidden-form"
+                action="https://api.web3forms.com/submit"
+                method="POST"
+                style="display: none"
+            >
                 <input
                     type="hidden"
                     name="access_key"
-                    value="9d270bc4-3bc4-4836-a6f6-b9b61295c71f"
+                    value="ed210488-8844-01"
                 />
-
-                <!-- autoReply（Web3Forms 側で設定） -->
                 <input
                     type="hidden"
                     name="redirect"
-                    value="https://fujigy.github.io/prof-hub.html"
+                    value="https://fujigy.github.io/resume-hub.html"
                 />
                 <input
                     type="hidden"
                     name="error_redirect"
-                    value="https://fujigy.github.io/prof-error.html"
+                    value="https://fujigy.github.io/resume-error.html"
                 />
-                <input
-                    type="hidden"
-                    name="subject"
-                    value="【閲覧申請】履歴書・職務経歴書"
-                />
-                <input
-                    type="hidden"
-                    name="from_name"
-                    value="fujigy.github.io"
-                />
-
-                <label for="email">メールアドレス</label>
-                <input type="email" id="email" name="email" required />
-
-                <!-- Honeypot -->
+                <input type="hidden" name="email" id="hidden-email" />
                 <input type="checkbox" name="botcheck" style="display: none" />
-
-                <!-- ▼▼▼ 送信ボタン（disabled に変更） ▼▼▼ -->
-                <button id="submit-btn" type="submit" disabled>申請する</button>
-                <!-- ▲▲▲ 送信ボタン（disabled に変更） ▲▲▲ -->
-
-                <!-- Web3Forms script（残す） -->
-                <script
-                    src="https://web3forms.com/client/script.js"
-                    async
-                    defer
-                ></script>
             </form>
         </div>
 
-        <!-- ▼▼▼ 認証ロジック（追加） ▼▼▼ -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-
+        <!-- ▼ ロジック ▼ -->
         <script>
-            // 正解「0」の MD5 ハッシュ
-            const correctHash = "cfcd208495d565ef66e7dff9f98764da";
+            const correctHash = "cfcd208495d565ef66e7dff9f98764da"; // 正解「0」の MD5
+            const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[A-Za-z]{2,}$/;
 
-            document.getElementById("auth-check").addEventListener("click", () => {
-                const input = document.getElementById("auth-answer").value.trim();
-                const hash = CryptoJS.MD5(input).toString();
+            document
+                .getElementById("submit-btn")
+                .addEventListener("click", () => {
+                    const answer = document
+                        .getElementById("auth-answer")
+                        .value.trim();
+                    const email = document.getElementById("email").value.trim();
+                    const errorBox = document.getElementById("error-message");
 
-                if (hash === correctHash) {
-                    document.getElementById("auth-result").style.color = "green";
-                    document.getElementById("auth-result").textContent =
-                        "認証成功しました。送信できます。";
+                    let hasError = false;
+                    errorBox.textContent = "";
 
-                    // 送信ボタンを有効化
-                    document.getElementById("submit-btn").disabled = false;
+                    // 入力欄の赤枠リセット
+                    document.getElementById("auth-answer").style.border = "";
+                    document.getElementById("email").style.border = "";
 
-                    // 認証ブロックを無効化（任意）
-                    document.getElementById("auth-answer").disabled = true;
-                    document.getElementById("auth-check").disabled = true;
-                } else {
-                    document.getElementById("auth-result").style.color = "red";
-                    document.getElementById("auth-result").textContent =
-                        "不正解です。";
+                    // 計算チェック
+                    const hash = CryptoJS.MD5(answer).toString();
+                    if (hash !== correctHash) {
+                        hasError = true;
+                        document.getElementById("auth-answer").style.border =
+                            "2px solid red";
+                    }
+
+                    // メールチェック
+                    if (!emailRegex.test(email)) {
+                        hasError = true;
+                        document.getElementById("email").style.border =
+                            "2px solid red";
+                    }
+
+                    // エラーがあればメッセージ表示
+                    if (hasError) {
+                        errorBox.textContent =
+                            "入力に誤りがあります。やり直してください。";
+                        return;
+                    }
+
+                    // 成功 → 即送信
+                    document.getElementById("hidden-email").value = email;
+                    document.getElementById("hidden-form").submit();
+                });
+
+            // 戻るボタン対策（キャッシュ復元時にリロード）
+            window.addEventListener("pageshow", function (event) {
+                if (event.persisted) {
+                    window.location.reload();
                 }
             });
         </script>
-        <!-- ▲▲▲ 認証ロジック（追加） ▲▲▲ -->
+
+        <!-- MD5 ライブラリ -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     </body>
 </html>
