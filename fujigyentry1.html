@@ -1,137 +1,112 @@
 <!doctype html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="style.css" />
-        <title>履歴書・職務経歴書｜アクセス確認</title>
-    </head>
 
-    <body>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>履歴書・職務経歴書｜アクセス確認</title>
+</head>
+
+<body>
+    <p>
+        <a href="https://fujigy.github.io/" style="color: #0066cc; text-decoration: none">
+            ← 先頭へ戻る
+        </a>
+    </p>
+
+    <div class="container">
+        <h1>履歴書・職務経歴書｜アクセス確認</h1>
         <p>
-            <a
-                href="https://fujigy.github.io/"
-                style="color: #0066cc; text-decoration: none"
-            >
-                ← 先頭へ戻る
-            </a>
+            閲覧をご希望の方は、以下の項目を入力し［次へ進む］をクリックしてください。
         </p>
 
-        <div class="container">
-            <h1>履歴書・職務経歴書｜アクセス確認</h1>
-            <p>
-                閲覧をご希望の方は、以下の項目を入力し［次へ進む］をクリックしてください。
-            </p>
+        <!-- ▼ 計算問題入力欄 -->
+        <label for="auth-answer">次の計算結果を半角数字で入力してください：</label>
+        <p><strong>123456 × 0 = ？</strong></p>
+        <input id="auth-answer" type="text" placeholder="半角数字" />
 
-            <!-- ▼ 計算問題入力欄 -->
-            <label for="auth-answer"
-                >次の計算結果を半角数字で入力してください：</label
-            >
-            <p><strong>123456 × 0 = ？</strong></p>
-            <input id="auth-answer" type="text" placeholder="半角数字" />
+        <!-- ▼ メールアドレス入力欄 -->
+        <label for="email" style="margin-top: 1rem">メールアドレス</label>
+        <input type="email" id="email" name="email" placeholder="your@example.com" />
 
-            <!-- ▼ メールアドレス入力欄 -->
-            <label for="email" style="margin-top: 1rem">メールアドレス</label>
-            <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="your@example.com"
-            />
+        <!-- ▼ エラーメッセージ -->
+        <p id="error-message" style="color: red; margin-top: 0.5rem"></p>
 
-            <!-- ▼ エラーメッセージ -->
-            <p id="error-message" style="color: red; margin-top: 0.5rem"></p>
+        <!-- ▼ 次へ進むボタン -->
+        <button id="submit-btn" type="button">次へ進む</button>
 
-            <!-- ▼ 次へ進むボタン -->
-            <button id="submit-btn" type="button">次へ進む</button>
+        <!-- ▼ Web3Forms hidden fields -->
+        <form id="hidden-form" action="https://api.web3forms.com/submit" method="POST" style="display: none">
+            <input type="hidden" name="access_key" value="9d270bc4-3bc4-4836-a6f6-b9b61295c71f" />
+            <input type="hidden" name="redirect" value="https://fujigy.github.io/resume-hub.html" />
+            <input type="hidden" name="error_redirect" value="https://fujigy.github.io/resume-error.html" />
+            <input type="hidden" name="email" id="hidden-email" />
+            <input type="checkbox" name="botcheck" style="display: none" />
+        </form>
+    </div>
 
-            <!-- ▼ Web3Forms hidden fields -->
-            <form
-                id="hidden-form"
-                action="https://api.web3forms.com/submit"
-                method="POST"
-                style="display: none"
-            >
-                <input
-                    type="hidden"
-                    name="access_key"
-                    value="9d270bc4-3bc4-4836-a6f6-b9b61295c71f"
-                />
-                <input
-                    type="hidden"
-                    name="redirect"
-                    value="https://fujigy.github.io/resume-hub.html"
-                />
-                <input
-                    type="hidden"
-                    name="error_redirect"
-                    value="https://fujigy.github.io/resume-error.html"
-                />
-                <input type="hidden" name="email" id="hidden-email" />
-                <input type="checkbox" name="botcheck" style="display: none" />
-            </form>
-        </div>
+    <!-- ▼ ロジック -->
+    <script>
+        const correctHash = "cfcd208495d565ef66e7dff9f98764da"; // 正解「0」の MD5
 
-        <!-- ▼ ロジック -->
-        <script>
-            const correctHash = "cfcd208495d565ef66e7dff9f98764da"; // 正解「0」の MD5
+        // ★ あなたが提示した安定版の正規表現に更新
+        const emailRegex =
+            /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 
-            // ★ あなたが提示した安定版の正規表現に更新
-            const emailRegex =
-                /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+        document
+            .getElementById("submit-btn")
+            .addEventListener("click", () => {
+                const answer = document
+                    .getElementById("auth-answer")
+                    .value.trim();
+                const email = document.getElementById("email").value.trim();
+                const errorBox = document.getElementById("error-message");
 
-            document
-                .getElementById("submit-btn")
-                .addEventListener("click", () => {
-                    const answer = document
-                        .getElementById("auth-answer")
-                        .value.trim();
-                    const email = document.getElementById("email").value.trim();
-                    const errorBox = document.getElementById("error-message");
+                let hasError = false;
+                errorBox.textContent = "";
 
-                    let hasError = false;
-                    errorBox.textContent = "";
+                // 入力欄の赤枠リセット
+                document.getElementById("auth-answer").style.border = "";
+                document.getElementById("email").style.border = "";
 
-                    // 入力欄の赤枠リセット
-                    document.getElementById("auth-answer").style.border = "";
-                    document.getElementById("email").style.border = "";
-
-                    // 計算チェック
-                    const hash = CryptoJS.MD5(answer).toString();
-                    if (hash !== correctHash) {
-                        hasError = true;
-                        document.getElementById("auth-answer").style.border =
-                            "2px solid red";
-                    }
-
-                    // メールチェック（★ 正規表現が正常に動作）
-                    if (!emailRegex.test(email)) {
-                        hasError = true;
-                        document.getElementById("email").style.border =
-                            "2px solid red";
-                    }
-
-                    // エラーがあればメッセージ表示
-                    if (hasError) {
-                        errorBox.textContent =
-                            "入力に誤りがあります。やり直してください。";
-                        return;
-                    }
-
-                    // 成功 → 即送信
-                    document.getElementById("hidden-email").value = email;
-                    document.getElementById("hidden-form").submit();
-                });
-
-            // 戻るボタン対策（キャッシュ復元時にリロード）
-            window.addEventListener("pageshow", function (event) {
-                if (event.persisted) {
-                    window.location.reload();
+                // 計算チェック
+                const hash = CryptoJS.MD5(answer).toString();
+                if (hash !== correctHash) {
+                    hasError = true;
+                    document.getElementById("auth-answer").style.border =
+                        "2px solid red";
                 }
-            });
-        </script>
 
-        <!-- MD5 ライブラリ -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-    </body>
+                // メールチェック（★ 正規表現が正常に動作）
+                if (!emailRegex.test(email)) {
+                    hasError = true;
+                    document.getElementById("email").style.border =
+                        "2px solid red";
+                }
+
+                // エラーがあればメッセージ表示
+                if (hasError) {
+                    errorBox.textContent =
+                        "入力に誤りがあります。やり直してください。";
+                    return;
+                }
+
+                // 成功 → 即送信
+                document.getElementById("hidden-email").value = email;
+                document.getElementById("hidden-form").submit();
+            });
+
+        // 戻るボタン対策（キャッシュ復元時にリロード）
+        window.addEventListener("pageshow", function (event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        });
+    </script>
+
+    <!-- MD5 ライブラリ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</body>
+
 </html>
