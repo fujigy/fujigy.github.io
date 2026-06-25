@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>履歴書・職務経歴書｜アクセス確認</title>
+    <title>履歴書・職務経歴書 閲覧・取得依頼</title>
 </head>
 
 <body>
@@ -16,9 +16,9 @@
     </p>
 
     <div class="container">
-        <h1>履歴書・職務経歴書｜アクセス確認</h1>
+        <h1>履歴書・職務経歴書 閲覧・取得依頼</h1>
         <p>
-            閲覧をご希望の方は、以下の項目を入力し［次へ進む］をクリックしてください。
+            閲覧・PDF取得をご希望の方は、以下の項目を入力の上、［次へ進む］をクリックしてください。
         </p>
 
         <!-- ▼ 計算問題入力欄 -->
@@ -27,7 +27,7 @@
         <input id="auth-answer" type="text" placeholder="半角数字" />
 
         <!-- ▼ メールアドレス入力欄 -->
-        <label for="email" style="margin-top: 1rem">メールアドレス</label>
+        <label for="email" style="margin-top: 1rem">連絡先メールアドレス</label>
         <input type="email" id="email" name="email" placeholder="your@example.com" />
 
         <!-- ▼ エラーメッセージ -->
@@ -40,7 +40,7 @@
         <form id="hidden-form" action="https://api.web3forms.com/submit" method="POST" style="display: none">
             <input type="hidden" name="access_key" value="9d270bc4-3bc4-4836-a6f6-b9b61295c71f" />
             <input type="hidden" name="redirect" value="https://fujigy.github.io/resume-hub.html" />
-            <input type="hidden" name="error_redirect" value="https://fujigy.github.io/resume-error.html" />
+            <!-- error_redirect は削除済み -->
             <input type="hidden" name="email" id="hidden-email" />
             <input type="checkbox" name="botcheck" style="display: none" />
         </form>
@@ -50,7 +50,7 @@
     <script>
         const correctHash = "cfcd208495d565ef66e7dff9f98764da"; // 正解「0」の MD5
 
-        // ★ あなたが提示した安定版の正規表現に更新
+        // ★ 安定版の正規表現
         const emailRegex =
             /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 
@@ -78,7 +78,7 @@
                         "2px solid red";
                 }
 
-                // メールチェック（★ 正規表現が正常に動作）
+                // メールチェック
                 if (!emailRegex.test(email)) {
                     hasError = true;
                     document.getElementById("email").style.border =
