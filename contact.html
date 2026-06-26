@@ -19,33 +19,33 @@
         <h1>お問い合わせ</h1>
         <p>以下のフォームからご連絡ください。</p>
 
-        <!-- ▼ 入力フォーム（visible） -->
-        <label for="name">お名前</label>
-        <input type="text" id="name" placeholder="あなたの おなまえ" />
+        <!-- ▼ visible form（CAPTCHA を含む） -->
+        <form id="visible-form">
+            <label for="name">お名前</label>
+            <input type="text" id="name" placeholder="あなたの おなまえ" />
 
-        <label for="email" style="margin-top: 1rem">連絡先メールアドレス</label>
-        <input type="email" id="email" placeholder="your@example.com" />
+            <label for="email" style="margin-top: 1rem">連絡先メールアドレス</label>
+            <input type="email" id="email" placeholder="your@example.com" />
 
-        <label for="message" style="margin-top: 1rem">お問い合わせ内容</label>
-        <textarea id="message" rows="6"></textarea>
+            <label for="message" style="margin-top: 1rem">お問い合わせ内容</label>
+            <textarea id="message" rows="6"></textarea>
 
-        <!-- ▼ Web3Forms CAPTCHA（hCaptcha は削除） -->
-        <div data-captcha="true"></div>
+            <!-- ▼ Web3Forms CAPTCHA（visible form 内に配置） -->
+            <div data-captcha="true"></div>
 
-        <p id="error-message" style="color: red; margin-top: 0.5rem"></p>
+            <p id="error-message" style="color: red; margin-top: 0.5rem"></p>
 
-        <button id="submit-btn" type="button">送信する</button>
+            <button id="submit-btn" type="button">送信する</button>
+        </form>
 
         <!-- ▼ hidden-form（Web3Forms 送信用） -->
         <form id="hidden-form" action="https://api.web3forms.com/submit" method="POST" style="display: none">
             <input type="hidden" name="access_key" value="43e6a524-cb77-42ce-ab92-d5e08fdfbf39" />
             <input type="hidden" name="redirect" value="https://fujigy.github.io/thanks.html" />
 
-            <!-- contact 専用 -->
             <input type="hidden" name="subject" value="【問い合わせ】from note" />
-            <input type="hidden" name="from_name" value="fujigy.github.io" />
+            <input type="hidden" name="from_name" value="contact" />
 
-            <!-- visible form の値をここに入れる -->
             <input type="hidden" name="name" id="hidden-name" />
             <input type="hidden" name="email" id="hidden-email" />
             <input type="hidden" name="message" id="hidden-message" />
@@ -54,10 +54,8 @@
         </form>
     </div>
 
-    <!-- ▼ Web3Forms CAPTCHA 用スクリプト -->
     <script src="https://web3forms.com/client/script.js" async defer></script>
 
-    <!-- ▼ ロジック -->
     <script>
         const emailRegex =
             /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
