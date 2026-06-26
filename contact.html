@@ -29,7 +29,8 @@
         <label for="message" style="margin-top: 1rem">お問い合わせ内容</label>
         <textarea id="message" rows="6"></textarea>
 
-        <div class="h-captcha" data-captcha="true"></div>
+        <!-- ▼ Web3Forms CAPTCHA（hCaptcha は削除） -->
+        <div data-captcha="true"></div>
 
         <p id="error-message" style="color: red; margin-top: 0.5rem"></p>
 
@@ -53,7 +54,7 @@
         </form>
     </div>
 
-    <!-- ▼ Web3Forms hCaptcha -->
+    <!-- ▼ Web3Forms CAPTCHA 用スクリプト -->
     <script src="https://web3forms.com/client/script.js" async defer></script>
 
     <!-- ▼ ロジック -->
