@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CAPTCHA TEST</title>
+</head>
+
+<body>
+  <h1>Web3Forms CAPTCHA Test</h1>
+
+  <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="43e6a524-cb77-42ce-ab92-d5e08fdfbf39" />
+
+    <label>メール</label>
+    <input type="email" name="email" required />
+
+    <div data-captcha="true"></div>
+
+    <button type="submit">送信</button>
+  </form>
+
+  <script src="https://web3forms.com/client/script.js" async defer></script>
+</body>
+
+</html>
