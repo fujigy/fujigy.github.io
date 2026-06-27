@@ -75,3 +75,7 @@ button:hover {
     margin: 0.2rem 0;
     line-height: 1.4;
 }
+
+.container p.lead:last-of-type {
+    margin-bottom: 1.2rem;  /* 導入文の最後だけ余白を広げる */
+}
