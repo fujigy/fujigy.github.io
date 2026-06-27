@@ -70,3 +70,8 @@ button:hover {
 .container {
     margin-top: 1.5rem; /* 好みで調整 */
 }
+
+.container p.tight {
+    margin: 0.2rem 0;
+    line-height: 1.4;
+}
