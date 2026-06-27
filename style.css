@@ -68,7 +68,8 @@ button:hover {
 }
 
 .container {
-    margin-top: 1.5rem; /* 好みで調整 */
+    margin-top: 1.5rem;
+    /* 好みで調整 */
 }
 
 .container p.tight {
@@ -77,5 +78,20 @@ button:hover {
 }
 
 .container p.lead:last-of-type {
-    margin-bottom: 1.2rem;  /* 導入文の最後だけ余白を広げる */
+    margin-bottom: 1.2rem;
+    /* 導入文の最後だけ余白を広げる */
+}
+
+/* ========================= */
+/* 戻りリンクの統一スタイル */
+/* ========================= */
+
+.back-link {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.back-link:hover {
+    text-decoration: underline;
 }
