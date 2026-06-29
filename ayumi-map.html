@@ -55,6 +55,9 @@
                         weight: 2
                     }
                 }).addTo(map);
+
+                // ★ GeoJSON 追加後にもう一度 fitBounds
+                map.fitBounds(bounds);
             })
             .catch(err => console.error('GeoJSON 読み込みエラー:', err));
     </script>
