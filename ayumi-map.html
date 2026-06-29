@@ -50,9 +50,14 @@
             .then(response => response.json())
             .then(data => {
                 L.geoJSON(data, {
+                    //style: {
+                    //    color: '#d33',
+                    //    weight: 2
+                    //}
                     style: {
-                        color: '#d33',
-                        weight: 2
+                        color: '#ff4444',
+                        weight: 4,
+                        opacity: 1.0
                     }
                 }).addTo(map);
 
