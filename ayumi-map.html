@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>あゆみ（地図表示）</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+        // 地図の初期化
+        const map = L.map('map');
+
+        // 表示領域（南西・北東）
+        const bounds = [
+            [30, 129], // 南西
+            [42, 143]  // 北東
+        ];
+
+        // 表示領域に合わせる
+        map.fitBounds(bounds);
+
+        // 地理院地図（標準地図）
+        L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png', {
+            attribution: "<a href='https://maps.gsi.go.jp/'>地理院地図</a>"
+        }).addTo(map);
+
+        // GeoJSON の読み込み
+        fetch('gsi20260628235623568.geojson')
+            .then(response => response.json())
+            .then(data => {
+                L.geoJSON(data, {
+                    style: {
+                        color: '#d33',
+                        weight: 2
+                    }
+                }).addTo(map);
+            })
+            .catch(err => console.error('GeoJSON 読み込みエラー:', err));
+    </script>
+
+</body>
+
+</html>
