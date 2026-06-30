@@ -114,8 +114,10 @@
                         if (p._markerType === "DivIcon" && p._html) {
                             // 元の HTML に横書き指定を追加
                             const html = p._html.replace(
-                                "<div ",
-                                "<div style=\"writing-mode: horizontal-tb;\" "
+                                // "<div ",
+                                // "<div style=\"writing-mode: horizontal-tb;\" "
+                                'style="',
+                                'style="writing-mode: horizontal-tb; '
                             );
 
                             return L.marker(latlng, {
