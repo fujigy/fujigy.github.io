@@ -110,6 +110,18 @@
                             });
                         }
 
+                        // DivIcon（ラベル）の場合
+                        if (p._markerType === "DivIcon" && p._html) {
+                            return L.marker(latlng, {
+                                icon: L.divIcon({
+                                    html: p._html,
+                                    className: "",   // 地理院の HTML をそのまま使う
+                                }),
+                                interactive: false // ラベルはクリック不要なら
+                            });
+                        }
+
+                        // その他の Point は描画しない
                         return null;
                     },
 
