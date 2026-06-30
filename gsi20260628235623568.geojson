@@ -1,0 +1,69 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "久我山",
+        "description": "1988 - 1994",
+        "_markerType": "CircleMarker",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3,
+        "_fillColor": "#00ff00",
+        "_fillOpacity": 0.5,
+        "_radius": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.599237,
+          35.682655
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "東三国",
+        "description": "1994 - 1996",
+        "_markerType": "CircleMarker",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3,
+        "_fillColor": "#00ff00",
+        "_fillOpacity": 0.5,
+        "_radius": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.495645,
+          34.743191
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "久我山 -> 東三国",
+        "_color": "#0000ff",
+        "_opacity": 0.5,
+        "_weight": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            139.599237,
+            35.682634
+          ],
+          [
+            135.495844,
+            34.743235
+          ]
+        ]
+      }
+    }
+  ]
+}
