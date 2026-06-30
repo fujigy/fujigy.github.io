@@ -60,11 +60,45 @@
                 //         opacity: 1.0
                 //     }
                 // }).addTo(map);
+                /*                 L.geoJSON(data, {
+                                    pointToLayer: function (feature, latlng) {
+                                        const p = feature.properties;
+                
+                                        // CircleMarker の場合
+                                        if (p._markerType === "CircleMarker") {
+                                            return L.circleMarker(latlng, {
+                                                color: p._color ?? "#000000",
+                                                weight: p._weight ?? 2,
+                                                opacity: p._opacity ?? 1.0,
+                                                fillColor: p._fillColor ?? "#3388ff",
+                                                fillOpacity: p._fillOpacity ?? 0.2,
+                                                radius: p._radius ?? 10
+                                            });
+                                        }
+                
+                                        // それ以外の Point は通常の Marker
+                                        //return L.marker(latlng);
+                                        return null;
+                                    },
+                
+                                    style: function (feature) {
+                                        const p = feature.properties;
+                
+                                        // LineString 以外にはスタイルを適用しない（安全策）
+                                        if (feature.geometry.type !== "LineString") return {};
+                                        // LineString のスタイル変換
+                                        return {
+                                            color: p._color ?? "#ff4444",
+                                            weight: p._weight ?? 4,
+                                            opacity: p._opacity ?? 1.0
+                                        };
+                                    }
+                                }).addTo(map);
+                 */
                 L.geoJSON(data, {
                     pointToLayer: function (feature, latlng) {
                         const p = feature.properties;
 
-                        // CircleMarker の場合
                         if (p._markerType === "CircleMarker") {
                             return L.circleMarker(latlng, {
                                 color: p._color ?? "#000000",
@@ -76,14 +110,14 @@
                             });
                         }
 
-                        // それ以外の Point は通常の Marker
-                        return L.marker(latlng);
+                        return null;
                     },
 
                     style: function (feature) {
                         const p = feature.properties;
 
-                        // LineString のスタイル変換
+                        if (feature.geometry.type !== "LineString") return {};
+
                         return {
                             color: p._color ?? "#ff4444",
                             weight: p._weight ?? 4,
@@ -91,7 +125,6 @@
                         };
                     }
                 }).addTo(map);
-
                 // ★ GeoJSON 追加後にもう一度 fitBounds
                 map.fitBounds(bounds);
             })
