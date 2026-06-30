@@ -118,8 +118,10 @@
                                 // "<div style=\"writing-mode: horizontal-tb;\" "
                                 // 'style="',
                                 // 'style="writing-mode: horizontal-tb; '
-                                "<div>",
-                                "<div style=\"writing-mode: horizontal-tb;\">"
+                                // "<div>",
+                                // "<div style=\"writing-mode: horizontal-tb;\">"
+                                /<div[^>]*>/,
+                                '<div style="writing-mode: horizontal-tb;">'
                             );
 
                             return L.marker(latlng, {
