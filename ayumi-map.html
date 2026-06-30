@@ -120,7 +120,8 @@
 
                             return L.marker(latlng, {
                                 icon: L.divIcon({
-                                    html: p._html,
+                                    // html: p._html,
+                                    html: html,
                                     className: "",   // 地理院の HTML をそのまま使う
                                 }),
                                 interactive: false // ラベルはクリック不要なら
