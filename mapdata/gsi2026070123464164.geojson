@@ -188,120 +188,14 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "佐倉",
         "_markerType": "DivIcon",
-        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">佐倉</div>"
+        "_html": "　"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.234985,
-          35.844535
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "誉田",
-        "_markerType": "DivIcon",
-        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">誉田</div>"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          140.248718,
-          35.626047
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "長浦",
-        "_markerType": "DivIcon",
-        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">長浦</div>"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.740601,
-          35.308401
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "田浦",
-        "_markerType": "DivIcon",
-        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">田浦</div>"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.42749,
-          35.256834
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "荏田",
-        "_markerType": "DivIcon",
-        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">荏田</div>"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.454956,
-          35.516579
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "あざみ野",
-        "_markerType": "DivIcon",
-        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">あざみ野</div>"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.177551,
-          35.601486
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "久我山",
-        "_markerType": "DivIcon",
-        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">久我山</div>"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.400024,
-          35.762115
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "東十条",
-        "_markerType": "DivIcon",
-        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">東十条</div>"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.655457,
-          35.877924
+          136.049194,
+          34.818313
         ]
       }
     },
@@ -332,96 +226,6 @@
         "coordinates": [
           141.509399,
           40.649387
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "舞鶴",
-        "_markerType": "DivIcon",
-        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">舞鶴</div>"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.219727,
-          35.438296
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "京都",
-        "_markerType": "DivIcon",
-        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">京都</div>"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.727844,
-          34.915215
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "東三国",
-        "_markerType": "DivIcon",
-        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">東三国</div>"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.230713,
-          34.793506
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "和歌山",
-        "_markerType": "DivIcon",
-        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">和歌山</div>"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.233459,
-          34.286723
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "徳島",
-        "_markerType": "DivIcon",
-        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">徳島</div>"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          134.631958,
-          34.145908
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "鹿屋",
-        "_markerType": "DivIcon",
-        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">鹿屋</div>"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          130.621948,
-          31.405224
         ]
       }
     },
@@ -465,28 +269,6 @@
           [
             135.760117,
             34.954267
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "鹿屋 -> 下総",
-        "_color": "#ff00ff",
-        "_opacity": 0.5,
-        "_weight": 5
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            130.834336,
-            31.382512
-          ],
-          [
-            140.024872,
-            35.806155
           ]
         ]
       }
@@ -641,21 +423,6 @@
         "coordinates": [
           130.834433,
           31.382479
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "呉",
-        "_markerType": "DivIcon",
-        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">呉</div>"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          132.574768,
-          34.336632
         ]
       }
     },
@@ -1122,6 +889,253 @@
             139.633055,
             35.2808
           ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "鹿屋 -> 下総",
+        "_color": "#ff00ff",
+        "_opacity": 0.5,
+        "_weight": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            130.834336,
+            31.382512
+          ],
+          [
+            140.024872,
+            35.806155
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "呉",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">呉</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.554169,
+          34.215777
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "鹿屋",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">鹿屋</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.836868,
+          31.36595
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "徳島",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">徳島</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.614105,
+          34.114647
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "和歌山",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">和歌山</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.11673,
+          34.247
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "東三国",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">東三国</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.472412,
+          34.721297
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "京都",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">京都</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.781403,
+          34.943925
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "舞鶴",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">舞鶴</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.304184,
+          35.495897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "長浦",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">長浦</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.673996,
+          35.321288
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "田浦",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">田浦</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.577866,
+          35.266365
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "荏田",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">荏田</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.562416,
+          35.541166
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "あざみ野",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">あざみ野</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.500961,
+          35.568818
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "久我山",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">久我山</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.588509,
+          35.671801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "東十条",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">東十条</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.738884,
+          35.773258
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "誉田",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">誉田</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.212326,
+          35.537814
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "佐倉",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">佐倉</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.232239,
+          35.703868
         ]
       }
     }
