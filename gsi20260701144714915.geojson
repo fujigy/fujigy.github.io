@@ -188,20 +188,6 @@
     {
       "type": "Feature",
       "properties": {
-        "_markerType": "DivIcon",
-        "_html": "　"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.049194,
-          34.818313
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "佐倉",
         "_markerType": "DivIcon",
         "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">佐倉</div>"
