@@ -96,7 +96,75 @@
                                     }
                                 }).addTo(map);
                  */
+                /*                 L.geoJSON(data, {
+                                    pointToLayer: function (feature, latlng) {
+                                        const p = feature.properties;
+                
+                                        if (p._markerType === "CircleMarker") {
+                                            return L.circleMarker(latlng, {
+                                                color: p._color ?? "#000000",
+                                                weight: p._weight ?? 2,
+                                                opacity: p._opacity ?? 1.0,
+                                                fillColor: p._fillColor ?? "#3388ff",
+                                                fillOpacity: p._fillOpacity ?? 0.2,
+                                                radius: p._radius ?? 10
+                                            });
+                                        }
+                
+                                        // DivIcon（ラベル）の場合
+                                        if (p._markerType === "DivIcon" && p._html) {
+                                            // 元の HTML に横書き指定を追加
+                                            const html = p._html.replace(
+                                                // "<div ",
+                                                // "<div style=\"writing-mode: horizontal-tb;\" "
+                                                // 'style="',
+                                                // 'style="writing-mode: horizontal-tb; '
+                                                // "<div>",
+                                                // "<div style=\"writing-mode: horizontal-tb;\">"
+                                                /<div[^>]*>/,
+                                                '<div style="writing-mode: horizontal-tb;">'
+                                            );
+                
+                                            return L.marker(latlng, {
+                                                icon: L.divIcon({
+                                                    // html: p._html,
+                                                    html: html,
+                                                    className: "",   // 地理院の HTML をそのまま使う
+                                                }),
+                                                interactive: false // ラベルはクリック不要なら
+                                            });
+                                        }
+                
+                                        // その他の Point は描画しない
+                                        return null;
+                                    },
+                
+                                    style: function (feature) {
+                                        const p = feature.properties;
+                
+                                        if (feature.geometry.type !== "LineString") return {};
+                
+                                        return {
+                                            color: p._color ?? "#ff4444",
+                                            weight: p._weight ?? 4,
+                                            opacity: p._opacity ?? 1.0
+                                        };
+                                    }
+                                }).addTo(map);
+                 */
+                // まず LineString だけ描画
                 L.geoJSON(data, {
+                    filter: f => f.geometry.type === "LineString",
+                    style: f => ({
+                        color: f.properties._color ?? "#ff4444",
+                        weight: f.properties._weight ?? 4,
+                        opacity: f.properties._opacity ?? 1.0
+                    })
+                }).addTo(map);
+
+                // 次に Point だけ描画
+                L.geoJSON(data, {
+                    filter: f => f.geometry.type === "Point",
                     pointToLayer: function (feature, latlng) {
                         const p = feature.properties;
 
@@ -111,44 +179,21 @@
                             });
                         }
 
-                        // DivIcon（ラベル）の場合
                         if (p._markerType === "DivIcon" && p._html) {
-                            // 元の HTML に横書き指定を追加
                             const html = p._html.replace(
-                                // "<div ",
-                                // "<div style=\"writing-mode: horizontal-tb;\" "
-                                // 'style="',
-                                // 'style="writing-mode: horizontal-tb; '
-                                // "<div>",
-                                // "<div style=\"writing-mode: horizontal-tb;\">"
                                 /<div[^>]*>/,
                                 '<div style="writing-mode: horizontal-tb;">'
                             );
-
                             return L.marker(latlng, {
                                 icon: L.divIcon({
-                                    // html: p._html,
                                     html: html,
-                                    className: "",   // 地理院の HTML をそのまま使う
+                                    className: "",
                                 }),
-                                interactive: false // ラベルはクリック不要なら
+                                interactive: false
                             });
                         }
 
-                        // その他の Point は描画しない
                         return null;
-                    },
-
-                    style: function (feature) {
-                        const p = feature.properties;
-
-                        if (feature.geometry.type !== "LineString") return {};
-
-                        return {
-                            color: p._color ?? "#ff4444",
-                            weight: p._weight ?? 4,
-                            opacity: p._opacity ?? 1.0
-                        };
                     }
                 }).addTo(map);
                 // ★ GeoJSON 追加後にもう一度 fitBounds

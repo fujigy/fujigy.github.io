@@ -1,0 +1,1143 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "â∫ëçÅiã§çœÅj",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">â∫ëçÅiã§çœÅj</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.026932,
+          35.823938
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "â∫ëçÅiLäØé…Åj",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">â∫ëçÅiLäØé…Åj</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.02367,
+          35.801943
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ãûìs -> ãvâ‰éR",
+        "_color": "#0000ff",
+        "_opacity": 0.5,
+        "_weight": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            135.759988,
+            34.954126
+          ],
+          [
+            139.599195,
+            35.68266
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ãvâ‰éR -> ìåéOçë",
+        "_color": "#0000ff",
+        "_opacity": 0.5,
+        "_weight": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            139.599237,
+            35.682634
+          ],
+          [
+            135.495844,
+            34.743235
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ìåéOçë -> ó_ìc",
+        "_color": "#0000ff",
+        "_opacity": 0.5,
+        "_weight": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            135.495586,
+            34.742882
+          ],
+          [
+            140.208035,
+            35.546893
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ó_ìc -> ç≤ëq",
+        "_color": "#0000ff",
+        "_opacity": 0.5,
+        "_weight": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            140.207691,
+            35.546893
+          ],
+          [
+            140.224643,
+            35.711482
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ç≤ëq -> Ç†Ç¥Ç›ñÏ",
+        "_color": "#0000ff",
+        "_opacity": 0.5,
+        "_weight": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            140.224643,
+            35.711482
+          ],
+          [
+            139.547224,
+            35.573129
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "â`ìc -> ìåè\è",
+        "_color": "#0000ff",
+        "_opacity": 0.5,
+        "_weight": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            139.55482,
+            35.545915
+          ],
+          [
+            139.727007,
+            35.769706
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ìåè\è -> ãûìs",
+        "_color": "#0000ff",
+        "_opacity": 0.5,
+        "_weight": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            139.727061,
+            35.769693
+          ],
+          [
+            135.760117,
+            34.954091
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_markerType": "DivIcon",
+        "_html": "Å@"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.049194,
+          34.818313
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ç≤ëq",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">ç≤ëq</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.234985,
+          35.844535
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ó_ìc",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">ó_ìc</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.248718,
+          35.626047
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "í∑âY",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">í∑âY</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.740601,
+          35.308401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ìcâY",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">ìcâY</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.42749,
+          35.256834
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "â`ìc",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">â`ìc</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.454956,
+          35.516579
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ç†Ç¥Ç›ñÏ",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">Ç†Ç¥Ç›ñÏ</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.177551,
+          35.601486
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ãvâ‰éR",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">ãvâ‰éR</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.400024,
+          35.762115
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ìåè\è",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:rgb(0, 0, 0);\">ìåè\è</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.655457,
+          35.877924
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ëÂñ©",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">ëÂñ©</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.949097,
+          41.319076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "î™åÀ",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">î™åÀ</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.509399,
+          40.649387
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ïëíﬂ",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">ïëíﬂ</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.219727,
+          35.438296
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ãûìs",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">ãûìs</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.727844,
+          34.915215
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ìåéOçë",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">ìåéOçë</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.230713,
+          34.793506
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "òaâÃéR",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">òaâÃéR</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.233459,
+          34.286723
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ìøìá",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">ìøìá</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.631958,
+          34.145908
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "é≠âÆ",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">é≠âÆ</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.621948,
+          31.405224
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ïëíﬂ -> ëÂñ©",
+        "_color": "#ff00ff",
+        "_opacity": 0.5,
+        "_weight": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            135.366132,
+            35.471435
+          ],
+          [
+            141.156979,
+            41.279355
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ïëíﬂ -> ãûìs",
+        "_color": "#ff00ff",
+        "_opacity": 0.5,
+        "_weight": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            135.366154,
+            35.4714
+          ],
+          [
+            135.760117,
+            34.954267
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "é≠âÆ -> â∫ëç",
+        "_color": "#ff00ff",
+        "_opacity": 0.5,
+        "_weight": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            130.834336,
+            31.382512
+          ],
+          [
+            140.024872,
+            35.806155
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "î™åÀ -> é≠âÆ",
+        "_color": "#ff00ff",
+        "_opacity": 0.5,
+        "_weight": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            141.484337,
+            40.550592
+          ],
+          [
+            130.834422,
+            31.382438
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "å‡ -> òaâÃéR",
+        "_color": "#ff00ff",
+        "_opacity": 0.5,
+        "_weight": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            132.5611,
+            34.238637
+          ],
+          [
+            135.187111,
+            34.268566
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "â∫ëç -> å‡",
+        "_color": "#ff00ff",
+        "_opacity": 0.5,
+        "_weight": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            140.025129,
+            35.80605
+          ],
+          [
+            132.561185,
+            34.238663
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ìøìá -> î™åÀ",
+        "_color": "#ff00ff",
+        "_opacity": 0.5,
+        "_weight": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            134.589987,
+            34.128432
+          ],
+          [
+            141.483307,
+            40.550331
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "â°ê{âÍ -> ìøìá",
+        "_color": "#ff00ff",
+        "_opacity": 0.5,
+        "_weight": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            139.64653,
+            35.294252
+          ],
+          [
+            134.590759,
+            34.12829
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ëÂñ© -> â∫ëç",
+        "_color": "#ff00ff",
+        "_opacity": 0.5,
+        "_weight": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            141.156807,
+            41.279355
+          ],
+          [
+            140.019186,
+            35.808591
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "é≠âÆés",
+        "description": "1973 - 1976",
+        "_markerType": "CircleMarker",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3,
+        "_fillColor": "#00ffff",
+        "_fillOpacity": 0.5,
+        "_radius": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.834433,
+          31.382479
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "å‡",
+        "_markerType": "DivIcon",
+        "_html": "<div style=\"font-size:18pt;font-weight:bold;color:#000000;\">å‡</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.574768,
+          34.336632
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "å‡és",
+        "description": "1977 - 1978",
+        "_markerType": "CircleMarker",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3,
+        "_fillColor": "#00ffff",
+        "_fillOpacity": 0.5,
+        "_radius": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.561132,
+          34.238672
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "î¬ñÏåSèºñŒí¨",
+        "description": "1969 - 1970",
+        "_markerType": "CircleMarker",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3,
+        "_fillColor": "#00ffff",
+        "_fillOpacity": 0.5,
+        "_radius": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.590309,
+          34.128405
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "òaâÃéRés",
+        "description": "1978 - 1979",
+        "_markerType": "CircleMarker",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3,
+        "_fillColor": "#00ffff",
+        "_fillOpacity": 0.5,
+        "_radius": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.187529,
+          34.268557
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ëÂç„ésóÑêÏãÊìåéOçë",
+        "description": "1994 - 1996",
+        "_markerType": "CircleMarker",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3,
+        "_fillColor": "#00ff00",
+        "_fillOpacity": 0.5,
+        "_radius": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.495645,
+          34.743191
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ãûìsésïöå©ãÊí|ìcéµê£êÏí¨",
+        "description": "1980 - 1988, 2012 - åªç›",
+        "_markerType": "CircleMarker",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3,
+        "_fillColor": "#00ffff",
+        "_fillOpacity": 0.5,
+        "_radius": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.760106,
+          34.954258
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "òaâÃéR -> ïëíﬂ",
+        "_color": "#ff00ff",
+        "_opacity": 0.5,
+        "_weight": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            135.187626,
+            34.269134
+          ],
+          [
+            135.365982,
+            35.471156
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ïëíﬂésó]ïîè„",
+        "èoê∂": "1965, 1979 - 1980",
+        "_markerType": "CircleMarker",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3,
+        "_fillColor": "#00ffff",
+        "_fillOpacity": 0.5,
+        "_radius": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.366122,
+          35.471457
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "â°ê{âÍésìcâYêÚí¨",
+        "description": "1968 - 1969",
+        "_markerType": "CircleMarker",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3,
+        "_fillColor": "#00ffff",
+        "_fillOpacity": 0.5,
+        "_radius": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.633012,
+          35.280888
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ìcâY -> í∑âY",
+        "_color": "#ff00ff",
+        "_opacity": 0.5,
+        "_weight": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            139.63299,
+            35.2808
+          ],
+          [
+            139.646595,
+            35.294234
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "â°ê{âÍésí∑âYí¨",
+        "description": "1969",
+        "_markerType": "CircleMarker",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3,
+        "_fillColor": "#00ffff",
+        "_fillOpacity": 0.5,
+        "_radius": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.646552,
+          35.294243
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ç†Ç¥Ç›ñÏ -> â`ìc",
+        "_color": "#0000ff",
+        "_opacity": 0.5,
+        "_weight": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            139.547138,
+            35.573059
+          ],
+          [
+            139.55482,
+            35.54595
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "â°ïlésê¬ótãÊÇ†Ç¥Ç›ñÏ",
+        "description": "2000 - 2001",
+        "_markerType": "CircleMarker",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3,
+        "_fillColor": "#00ff00",
+        "_fillOpacity": 0.5,
+        "_radius": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.547219,
+          35.573138
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "â°ïlésìsí}ãÊâ`ìcìÏ",
+        "description": "2001 - 2005",
+        "_markerType": "CircleMarker",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3,
+        "_fillColor": "#00ff00",
+        "_fillOpacity": 0.5,
+        "_radius": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.554863,
+          35.545972
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "êôï¿ãÊãvâ‰éRÇPíöñ⁄",
+        "description": "1988 - 1994",
+        "_markerType": "CircleMarker",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3,
+        "_fillColor": "#00ff00",
+        "_fillOpacity": 0.5,
+        "_radius": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.599237,
+          35.682655
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "êÁótésóŒãÊó_ìcí¨",
+        "description": "1996 - 1999",
+        "_markerType": "CircleMarker",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3,
+        "_fillColor": "#00ff00",
+        "_fillOpacity": 0.5,
+        "_radius": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.208061,
+          35.547024
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ç≤ëqés",
+        "description": "1999 - 2000",
+        "_markerType": "CircleMarker",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3,
+        "_fillColor": "#00ff00",
+        "_fillOpacity": 0.5,
+        "_radius": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.22467,
+          35.711517
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ìåäãè¸åSè¿ìÏí¨ì°ÉñíJã§çœèZëÓ",
+        "description": "1967 - 1968",
+        "_markerType": "CircleMarker",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3,
+        "_fillColor": "#00ffff",
+        "_fillOpacity": 0.5,
+        "_radius": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.019202,
+          35.808569
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ìåäãè¸åSè¿ìÏí¨ì°ÉñíJLäØé…",
+        "description": "1976 - 1977",
+        "_markerType": "CircleMarker",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3,
+        "_fillColor": "#00ffff",
+        "_fillOpacity": 0.5,
+        "_radius": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.024995,
+          35.806194
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ñkãÊìåè\èÇTíöñ⁄",
+        "description": "2005 - 2012",
+        "_markerType": "CircleMarker",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3,
+        "_fillColor": "#00ff00",
+        "_fillOpacity": 0.5,
+        "_radius": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.727029,
+          35.769702
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "î™åÀés",
+        "description": "1970 - 1973",
+        "_markerType": "CircleMarker",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3,
+        "_fillColor": "#00ffff",
+        "_fillOpacity": 0.5,
+        "_radius": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.483811,
+          40.550306
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ÇﬁÇ¬ésëÂñ©",
+        "description": "1965 - 1966",
+        "_markerType": "CircleMarker",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3,
+        "_fillColor": "#00ffff",
+        "_fillOpacity": 0.5,
+        "_radius": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.156979,
+          41.279355
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "â∫ëç -> â°ê{âÍ",
+        "_color": "#ff00ff",
+        "_opacity": 0.5,
+        "_weight": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            140.019164,
+            35.808469
+          ],
+          [
+            139.633055,
+            35.2808
+          ]
+        ]
+      }
+    }
+  ]
+}
