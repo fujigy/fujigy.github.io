@@ -18,11 +18,26 @@
             width: 100vw;
             height: 100vh;
         }
+
+        #map-title {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 6px 12px;
+            border-radius: 6px;
+            pointer-events: none;
+            z-index: 9999;
+        }
     </style>
 </head>
 
 <body>
     <div id="map"></div>
+    <div id="map-title">地図で見るあゆみ</div>
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
