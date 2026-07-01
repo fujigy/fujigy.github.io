@@ -187,7 +187,8 @@
                              */
                             const html = p._html.replace(
                                 /<div[^>]*>/,
-                                '<div style="writing-mode: horizontal-tb !important; white-space: nowrap !important;">'
+                                // '<div style="writing-mode: horizontal-tb !important; white-space: nowrap !important;">'
+                                '<div style="writing-mode: horizontal-tb !important; font-size: 18pt !important; white-space: nowrap !important;">'
                             );
                             return L.marker(latlng, {
                                 icon: L.divIcon({
