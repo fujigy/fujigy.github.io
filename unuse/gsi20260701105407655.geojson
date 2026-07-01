@@ -4,6 +4,26 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "ひきだ",
+        "_markerType": "CircleMarker",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3,
+        "_fillColor": "#ff0000",
+        "_fillOpacity": 0.5,
+        "_radius": 53.2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.030609,
+          35.845648
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name": "久我山",
         "description": "1988 - 1994",
         "_markerType": "CircleMarker",
