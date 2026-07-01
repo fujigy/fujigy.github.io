@@ -180,9 +180,14 @@
                         }
 
                         if (p._markerType === "DivIcon" && p._html) {
+                            /*                             const html = p._html.replace(
+                                                            /<div[^>]*>/,
+                                                            '<div style="writing-mode: horizontal-tb;">'
+                                                        );
+                             */
                             const html = p._html.replace(
                                 /<div[^>]*>/,
-                                '<div style="writing-mode: horizontal-tb;">'
+                                '<div style="writing-mode: horizontal-tb !important; white-space: nowrap !important;">'
                             );
                             return L.marker(latlng, {
                                 icon: L.divIcon({
