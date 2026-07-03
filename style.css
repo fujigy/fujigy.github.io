@@ -95,3 +95,10 @@ button:hover {
 .back-link:hover {
     text-decoration: underline;
 }
+
+/* ========================= */
+/* インデント設定             */
+/* ========================= */
+.article-list h5 {
+  margin-left: 1.2em;
+}
