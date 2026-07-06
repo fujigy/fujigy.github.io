@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>これまでのあゆみ 閲覧・取得依頼</title>
+</head>
+
+<body>
+    <p>
+        <a href="https://note.com/fujizy/n/n353340752459" class="back-link">← 先頭へ戻る</a>
+    </p>
+
+    <div class="container">
+        <h1>これまでのあゆみ 閲覧・取得依頼</h1>
+        <p>
+            閲覧をご希望の方は、以下の項目を入力の上、［次へ進む］をクリックしてください。
+        </p>
+
+        <!-- ▼ 計算問題入力欄（entry2 は独自の式を維持） -->
+        <label for="auth-answer">次の計算結果を半角数字で入力してください：</label>
+        <p><strong>（ １ ＋ ２ ） ÷（ ３ －４ ） ✕ （ ５ ＋６ ） ✕ 0 ＝ ？</strong></p>
+        <input id="auth-answer" type="text" placeholder="半角数字" />
+
+        <!-- ▼ メールアドレス入力欄 -->
+        <label for="email" style="margin-top: 1rem">連絡先メールアドレス</label>
+        <input type="email" id="email" name="email" placeholder="your@example.com" />
+
+        <!-- ▼ エラーメッセージ -->
+        <p id="error-message" style="color: red; margin-top: 0.5rem"></p>
+
+        <!-- ▼ 次へ進むボタン -->
+        <button id="submit-btn" type="button">次へ進む</button>
+
+        <!-- ▼ Web3Forms hidden fields -->
+        <form id="hidden-form" action="https://api.web3forms.com/submit" method="POST" style="display: none">
+            <input type="hidden" name="access_key" value="a24f6264-e3f7-4ee8-b096-2d969d5d4d4a" />
+            <input type="hidden" name="redirect" value="https://fujigy.github.io/ayumi-hub.html" />
+
+            <!-- ▼ STEP2：統一仕様 -->
+            <input type="hidden" name="subject" value="【アクセス通知】あゆみ" />
+            <input type="hidden" name="from_name" value="fujigyentry2" />
+
+            <input type="hidden" name="email" id="hidden-email" />
+            <input type="checkbox" name="botcheck" style="display: none" />
+        </form>
+    </div>
+
+    <!-- ▼ ロジック -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+    <script>
+        const correctHash = "cfcd208495d565ef66e7dff9f98764da"; // 正解「0」の MD5
+
+        const emailRegex =
+            /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+
+        document
+            .getElementById("submit-btn")
+            .addEventListener("click", () => {
+                const answer = document.getElementById("auth-answer").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const errorBox = document.getElementById("error-message");
+
+                let hasError = false;
+                errorBox.textContent = "";
+
+                document.getElementById("auth-answer").style.border = "";
+                document.getElementById("email").style.border = "";
+
+                const hash = CryptoJS.MD5(answer).toString();
+                if (hash !== correctHash) {
+                    hasError = true;
+                    document.getElementById("auth-answer").style.border = "2px solid red";
+                }
+
+                if (!emailRegex.test(email)) {
+                    hasError = true;
+                    document.getElementById("email").style.border = "2px solid red";
+                }
+
+                if (hasError) {
+                    errorBox.textContent = "入力に誤りがあります。やり直してください。";
+                    return;
+                }
+
+                document.getElementById("hidden-email").value = email;
+                document.getElementById("hidden-form").submit();
+            });
+
+        window.addEventListener("pageshow", function (event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        });
+    </script>
+
+</body>
+
+</html>
