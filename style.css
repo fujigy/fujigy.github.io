@@ -102,3 +102,20 @@ button:hover {
 .article-list p {
   margin-left: 1.2em;
 }
+
+/* ========================= */
+/* minimal 用の調整ここから */
+/* ========================= */
+
+h2 {
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+}
+
+main p {
+  margin: 0.4em 0;
+}
+
+hr {
+  margin: 1.5em 0;
+}
