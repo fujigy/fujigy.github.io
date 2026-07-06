@@ -1,7 +1,7 @@
 # fujigy.github.io
 
 ## サイト開発準備
-    [【GitHub×VsCode】基本操作まとめ](https://qiita.com/yuchi0999/items/477a47dffec98a1611b1)
+  [【GitHub×VsCode】基本操作まとめ](https://qiita.com/yuchi0999/items/477a47dffec98a1611b1)
 
 ## fujigy.github.io
 ┌──────────────────────────────────────────────┐  
