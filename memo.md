@@ -1,0 +1,1 @@
+- 2026.07.08    takeda-kobo.github.io とワークスペース統一
