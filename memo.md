@@ -1,3 +1,4 @@
+- 2026.07.10    setting.json 項目再再再々追加
 - 2026.07.10    setting.json 項目再再再追加
 - 2026.07.10    setting.json 項目再再追加
 - 2026.07.10    setting.json 項目再追加
