@@ -1,0 +1,117 @@
+/* =========================================
+   フォーム専用レイアウト（本文と完全分離）
+========================================= */
+
+.form-container {
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* 見出し（本文の h2 と衝突しない） */
+.form-title {
+    margin-top: 2.2em;
+    margin-bottom: 1.2em;
+    border-left: 4px solid #999;
+    padding-left: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+/* ラベル・入力欄 */
+.form-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container textarea {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+.form-container textarea {
+    height: 160px;
+    resize: vertical;
+}
+
+/* ボタン */
+.form-container button,
+.form-container input[type="submit"] {
+    width: 100%;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+.form-container button:hover,
+.form-container input[type="submit"]:hover {
+    background-color: #555;
+}
+
+/* hCaptcha */
+.form-container .h-captcha {
+    margin-bottom: 1rem;
+}
+
+/* 戻りリンク */
+.form-container .back-link {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.form-container .back-link:hover {
+    text-decoration: underline;
+}
+
+/* 成功・エラー画面 */
+.message-box {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.message-box .icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.success .icon {
+    color: #4CAF50;
+}
+
+.error .icon {
+    color: #E53935;
+}
+
+.message-box p {
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #000;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.back-button:hover {
+    background: #333;
+}
